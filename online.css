@@ -5122,7 +5122,6 @@ a.video-btn {
   border: 1px solid var(--grey, #b3b8bc);
   padding: 8px 17px 22px 16px;
   max-width: 252px;
-  position: relative;
 }
 .online-registration
   #registrationForm
@@ -5309,16 +5308,6 @@ a.video-btn {
 .online-registration #registrationForm .error {
   color: red;
 }
-
-.online-registration #registrationForm .birthdate-selects {
-  display: flex;
-  gap: 10px;
-}
-.online-registration #registrationForm .birthdate-selects select {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
 @media (max-width: 991px) {
   .online-registration #registrationForm .nice-select.doctors-select {
     color: var(--black, #282828);
@@ -5367,6 +5356,10 @@ a.video-btn {
   .header-online-registration-mobile {
     display: none;
   }
+}
+
+.time-div {
+  position: relative;
 }
 
 .overlay {

@@ -23,11 +23,11 @@
 <section class="blog-page-area pb-50">
     <div class="container services-container online-registration">
         <div class="row">
-			<div class="mb-20 blog-single-item services-single-item">
-				<div class="faq-box-item-topline">
-					<p class="faq-box-item-topline-question">Поліклінічне відділення</p>
-				</div>
-			</div>
+            <div class="mb-20 blog-single-item services-single-item">
+                <div class="faq-box-item-topline">
+                    <p class="faq-box-item-topline-question">Поліклінічне відділення</p>
+                </div>
+            </div>
         </div>
     <form id="registrationForm">
         <div class="registrationForm-part">
