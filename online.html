@@ -196,6 +196,51 @@
         <input type="text" id="email" name="email" placeholder="Email *" required>
     </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const daySelect = document.getElementById('birthDay');
+    const monthSelect = document.getElementById('birthMonth');
+    const yearSelect = document.getElementById('birthYear');
+
+    // Заповнення днів
+    for (let day = 1; day <= 31; day++) {
+        const formattedDay = String(day).padStart(2, '0');
+        daySelect.options.add(new Option(formattedDay, formattedDay));
+    }
+
+    // Заповнення місяців
+    const months = ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", 
+                    "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"];
+    months.forEach((month, index) => {
+        monthSelect.options.add(new Option(month, index + 1));
+    });
+
+    // Заповнення років (з 1965 по поточний рік)
+    const currentYear = new Date().getFullYear();
+    for (let year = currentYear - 60; year <= currentYear; year++) {
+        yearSelect.options.add(new Option(year, year));
+    }
+
+    // Оновлення Nice Select для відображення нових опцій
+    $('select').niceSelect('update');
+});
+</script>
+
+    <div class="registrationForm-part birthdate-data">
+        <label class="label">Дата народження:</label>
+        <div class="birthdate-selects">
+            <select id="birthDay" name="birthDay" required>
+                <option value="" selected hidden>День</option>
+            </select>
+            <select id="birthMonth" name="birthMonth" required>
+                <option value="" selected hidden>Місяць</option>
+            </select>
+            <select id="birthYear" name="birthYear" required>
+                <option value="" selected hidden>Рік</option>
+            </select>
+        </div>
+    </div>
+
     <div class="registrationForm-part">
     <fieldset class="checkbox-wrapper">
         <label>з направленням
@@ -284,6 +329,15 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Будь ласка, виберіть лікаря.');
             return;
         }
+        const day = document.getElementById('birthDay').value;
+        const month = document.getElementById('birthMonth').value;
+        const year = document.getElementById('birthYear').value;
+        if (!day || !month || !year) {
+            event.preventDefault();
+            alert('Будь ласка, заповніть дату народження.');
+        }
+        formData.append('birthDate', `${year}-${month}-${day}`);
+
 
         const data = {
             doctor: formData.get('doctors'),
@@ -292,7 +346,8 @@ document.addEventListener('DOMContentLoaded', function() {
             fullname: formData.get('fullname'),
             phone: formData.get('phone'),
             email: formData.get('email'),
-            referral: formData.get('referral')
+            referral: formData.get('referral'),
+            birthDate: formData.get('birthDate')
         };
 
         if(isValid){

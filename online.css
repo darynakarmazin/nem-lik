@@ -5308,6 +5308,31 @@ a.video-btn {
 .online-registration #registrationForm .error {
   color: red;
 }
+
+.online-registration #registrationForm .registrationForm-part.birthdate-data {
+  display: flex;
+  gap: 16px;
+  max-width: 546px;
+}
+.online-registration #registrationForm .birthdate-selects {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--grey, #b3b8bc);
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+.online-registration #registrationForm .birthdate-selects select,
+.online-registration #registrationForm .birthdate-selects .nice-select {
+  width: calc((100% - 30px) / 3);
+  /* padding: 10px 12px; */
+  border-radius: 0;
+  border: 1px solid var(--grey, #b3b8bc);
+  color: var(--grey, #b3b8bc);
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
+
 @media (max-width: 991px) {
   .online-registration #registrationForm .nice-select.doctors-select {
     color: var(--black, #282828);
