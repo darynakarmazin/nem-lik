@@ -5003,7 +5003,8 @@ a.video-btn {
   gap: 32px;
   flex-direction: column;
   margin-top: 24px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  overflow: hidden;
 }
 
 .online-registration .flatpickr-innerContainer {
@@ -5085,6 +5086,10 @@ a.video-btn {
   padding: 16px;
   border-radius: 0px;
   height: 60px;
+}
+.online-registration #registrationForm .nice-select.doctors-select.open .list {
+  max-height: 1000px;
+  overflow: scroll;
 }
 .online-registration #registrationForm .registrationForm-part.time-data {
   display: flex;
@@ -5320,7 +5325,6 @@ a.video-btn {
   gap: 10px;
   color: var(--grey, #b3b8bc);
   font-family: "Lato", sans-serif;
-  font-size: 14px;
 }
 .online-registration #registrationForm .birthdate-selects select,
 .online-registration #registrationForm .birthdate-selects .nice-select {
@@ -5330,7 +5334,36 @@ a.video-btn {
   border: 1px solid var(--grey, #b3b8bc);
   color: var(--grey, #b3b8bc);
   font-family: "Lato", sans-serif;
+  font-size: 12px;
+}
+.online-registration #registrationForm .birthdate-selects select,
+.online-registration
+  #registrationForm
+  .birthdate-selects
+  .nice-select
+  .current {
   font-size: 14px;
+}
+.online-registration
+  #registrationForm
+  .birthdate-selects
+  .nice-select.open
+  .list
+  .option {
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 0px;
+  border-bottom: 0.5px solid var(--grey, #b3b8bc);
+  color: #000;
+}
+
+.online-registration
+  #registrationForm
+  .birthdate-selects
+  .nice-select.open
+  .list {
+  max-height: 200px;
+  overflow: scroll;
 }
 
 @media (max-width: 991px) {
